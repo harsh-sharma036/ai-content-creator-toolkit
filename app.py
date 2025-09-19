@@ -742,36 +742,36 @@ if feature == "YouTube Thumbnail Generator":
         if model and yt_metadata:
             with st.spinner("Generating thumbnail prompt..."):
                 thumb_prompt = model.generate_content(
-    f"""
-# ROLE: You are a YouTube Thumbnail Artist specializing in creating viral, high-click-through-rate (CTR) thumbnails using AI image generators.
+                f"""
+                # ROLE: You are a YouTube Thumbnail Artist specializing in creating viral, high-click-through-rate (CTR) thumbnails using AI image generators.
 
-# TASK: Analyze the provided YouTube video metadata and generate ONE single, highly descriptive image prompt. The prompt must visualize the core concept of the video as a dramatic, attention-grabbing contrast.
+                # TASK: Analyze the provided YouTube video metadata and generate ONE single, highly descriptive image prompt. The prompt must visualize the core concept of the video as a dramatic, attention-grabbing contrast.
 
-# METADATA:
-{yt_metadata}
+                # METADATA:
+                {yt_metadata}
 
-# INSTRUCTIONS:
-1.  Identify the main subject (e.g., a person, product, concept).
-2.  Identify the core conflict or comparison (e.g., "X vs Y", "good vs bad", "before vs after", "shocking result").
-3.  Translate this conflict into a strong visual metaphor using a split-screen, a glowing vs dark object, a transformation, or a shocking facial expression.
-4.  Inject high-energy keywords to maximize visual appeal.
-5.  **OUTPUT ONLY THE PROMPT. NO OTHER TEXT.**
+                # INSTRUCTIONS:
+                1.  Identify the main subject (e.g., a person, product, concept).
+                2.  Identify the core conflict or comparison (e.g., "X vs Y", "good vs bad", "before vs after", "shocking result").
+                3.  Translate this conflict into a strong visual metaphor using a split-screen, a glowing vs dark object, a transformation, or a shocking facial expression.
+                4.  Inject high-energy keywords to maximize visual appeal.
+                5.  **OUTPUT ONLY THE PROMPT. NO OTHER TEXT.**
 
-# PROMPT TEMPLATE:
-"[Genre] of [Main Subject], [Visualizing the Conflict]. [Style and Quality Boosters]."
+                # PROMPT TEMPLATE:
+                "[Genre] of [Main Subject], [Visualizing the Conflict]. [Style and Quality Boosters]."
 
-# EXAMPLE 1 (For an 'AI Tools for Creators' video):
-"YouTube thumbnail of a man's face split into four quadrants, each with a different visual style and a glowing AI logo (VidIQ, Canva, ChatGPT, Copilot), one quadrant is photorealistic and clear while the others are distorted and glitched. Cinematic lighting, hyper-detailed, digital art, trending on ArtStation."
+                # EXAMPLE 1 (For an 'AI Tools for Creators' video):
+                "YouTube thumbnail of a man's face split into four quadrants, each with a different visual style and a glowing AI logo (VidIQ, Canva, ChatGPT, Copilot), one quadrant is photorealistic and clear while the others are distorted and glitched. Cinematic lighting, hyper-detailed, digital art, trending on ArtStation."
 
-# EXAMPLE 2 (For a 'Python vs Javascript' video):
-"YouTube thumbnail of a fierce visual battle between a sleek Python snake and a detailed Javascript shield, cracking on impact. Epic dynamic lighting, sparks flying, hyper-realistic, 3D render, dramatic atmosphere."
+                # EXAMPLE 2 (For a 'Python vs Javascript' video):
+                "YouTube thumbnail of a fierce visual battle between a sleek Python snake and a detailed Javascript shield, cracking on impact. Epic dynamic lighting, sparks flying, hyper-realistic, 3D render, dramatic atmosphere."
 
-# EXAMPLE 3 (For a 'We Tested 5 Gaming Chairs' video):
-"YouTube thumbnail of a single gamer reacting with a shocked expression, sitting in five different gaming chairs that are visually merging together around him. Vibrant colors, depth of field, studio lighting, photorealistic."
+                # EXAMPLE 3 (For a 'We Tested 5 Gaming Chairs' video):
+                "YouTube thumbnail of a single gamer reacting with a shocked expression, sitting in five different gaming chairs that are visually merging together around him. Vibrant colors, depth of field, studio lighting, photorealistic."
 
-# YOUR OUTPUT (Follow the template and examples. Be creative and dramatic):
-"""
-).text
+        #YOUR OUTPUT (Follow the template and examples. Be creative and dramatic):
+                """
+                ).text
 
 
                 st.markdown("**Thumbnail Prompt:**")
